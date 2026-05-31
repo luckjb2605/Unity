@@ -8,12 +8,15 @@ public class LogicScript : MonoBehaviour
     public Text scoreText;
     public GameObject gameOverScreen;
     public GameObject bird;
+    public AudioSource gameOverSFX;
+    public AudioSource scoreUpSFX;
 
     [ContextMenu("Increase Score")]
     public void AddScore(int scoreToAdd)
     {
         playerScore += scoreToAdd;
         scoreText.text = playerScore.ToString();
+        scoreUpSFX.Play();
     }
 
     public void RestartGame()
@@ -27,6 +30,6 @@ public class LogicScript : MonoBehaviour
     {
         gameOverScreen.SetActive(true);
         Destroy(bird);
-        
+        gameOverSFX.Play();
     }
 }

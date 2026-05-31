@@ -36,8 +36,6 @@ public class PipeSpawnerScript : MonoBehaviour
             Camera.main.transform.position.x + screenHalfWidth;
         
         spawnX = rightEdge + pipeHalfWidth;
-        
-        Debug.Log(spawnX);
     }
 
     void SpawnPipe()

@@ -6,6 +6,7 @@ public class BirdScript : MonoBehaviour
     public float flapStrength;
     public LogicScript logic;
     public bool birdIsAlive = true;
+    public AudioSource jumpSFX;
 
     private float screenHeight;
 
@@ -26,6 +27,8 @@ public class BirdScript : MonoBehaviour
         {
             myRigidbody.linearVelocity =
                 Vector2.up * flapStrength;
+
+            jumpSFX.Play();
         }
 
         if (transform.position.y > screenHeight
